@@ -9,10 +9,8 @@ RUN apt-get install -qq aptitude && \
     libglib2.0-0 libfontconfig libx11-6 libxi6 \
     libxcursor1 libxss1 libxcomposite1 libxdamage1 libxtst6 libdbus-1-3 \
     libgl1-mesa-dri libegl1 libglx0 libglx-mesa0 libopengl0 libgomp1 \
-    libsnappy1v5 libxkbcommon0 \
+    libsnappy1v5 libxkbcommon0 libxkbcommon-x11-0 libxkbfile1 libxcb* \
     xdg-utils p7zip-full sudo
-RUN apt-get install -y libxkbfile1 libxcb-cursor0 libxcb1 libxcb-glx0 libxcb* libxkbcommon-x11-0
-# libsnappy1 libgl1-mesa-glx
 RUN curl https://dls.photoprintit.com/api/getClient/29762-de_AT/hps/x_x_x_x_7892_x_07892-IVQox7ApAkKGS/linux > /tmp/cewe.tgz && \
 	tar xvf /tmp/cewe.tgz && \
     cp /bin/echo /bin/less && \
