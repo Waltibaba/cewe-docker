@@ -1,0 +1,16 @@
+services:
+  cewe:
+    build: .
+    restart: no
+    volumes:
+      - .:/home/ubuntu/ceweworkspace
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ${XDG_RUNTIME_DIR}:/run/user/1000
+      - ${XAUTHORITY}:/home/ubuntu/.Xauthority:rw
+    user: ubuntu
+    environment:
+      - DISPLAY=${DISPLAY}
+      - XAUTHORITY=/home/ubuntu/.Xauthority
+      - XDG_RUNTIME_DIR=/run/user/1000
+    # command: ["/opt/CEWE\ Fotowelt"]
+    # command: ["/opt/CEWE\ Fotoschau"]
